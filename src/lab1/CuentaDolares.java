@@ -8,14 +8,12 @@ package lab1;
 public class CuentaDolares {
     private Integer numeroCuenta;
     private double saldoCliente;
-    private double tipoCambio;
+    private static double tipoCambio;
 
     public Integer getNumeroCuenta() {
         return numeroCuenta;
     }
     
-    
-
     public double getSaldoCliente() {
         return saldoCliente;
     }
@@ -32,12 +30,12 @@ public class CuentaDolares {
         this.tipoCambio = tipoCambio;
     }
 
-    public CuentaDolares(Integer numeroCuenta, double saldoCliente, double tipoCambio) {
+    public CuentaDolares(Integer numeroCuenta, double saldoCliente) {
         this.numeroCuenta = numeroCuenta;
         this.saldoCliente = saldoCliente;
-        this.tipoCambio = tipoCambio;
     }
-    
+
+
     
     
     
