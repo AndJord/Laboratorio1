@@ -1,8 +1,6 @@
-
 package lab1;
 
 import java.util.ArrayList;
-
 /**
  *
  * @author ADMIN
@@ -17,9 +15,7 @@ public class Clientes {
     private int edad;
     private ArrayList<CuentaDolares> listaCuentaDolares;
     private ArrayList<CuentaColones> listaCuentaColones;
-    
-    
-    
+   
     public String getNombre() {
         return nombre;
     }
@@ -72,7 +68,21 @@ public class Clientes {
         this.listaCuentaColones = listaCuentaColones;
     }
     
+     public void agregarCuentaDolar(CuentaDolares dolares){
+        listaCuentaDolares.add(dolares);
+    }
+     
+     public void agregarCuentaColon(CuentaColones colones){
+        listaCuentaColones.add(colones);
+    }
+     
+    public void eliminarCuentaDolar(CuentaColones dolar){
+        listaCuentaColones.remove(dolar);
+      }
     
+     public void eliminarCuentaColon(CuentaColones colones){
+        listaCuentaColones.remove(colones);
+      }
      
 }
 
