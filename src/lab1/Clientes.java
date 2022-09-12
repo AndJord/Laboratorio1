@@ -51,11 +51,14 @@ public class Clientes {
         return listaCuentaColones;
     }
 
-    public Clientes(String nombre, String cedula, Integer fechaNacimiento,
-            String correo, Integer telefono, int edad,
-            ArrayList<CuentaDolares> listaCuentaDolares,
-            ArrayList<CuentaColones> listaCuentaColones) {
-        
+    public ArrayList<TarjetaCredito> getListaTarjertaCredito() {
+        return listaTarjertaCredito;
+    }
+
+    public Clientes(String nombre, String cedula, Integer fechaNacimiento, String correo,
+            Integer telefono, int edad, ArrayList<CuentaDolares> listaCuentaDolares,
+            ArrayList<CuentaColones> listaCuentaColones, ArrayList<TarjetaCredito> listaTarjertaCredito,
+            CuentaColones colones, CuentaDolares dolares) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.fechaNacimiento = fechaNacimiento;
@@ -64,28 +67,8 @@ public class Clientes {
         this.edad = edad;
         this.listaCuentaDolares = listaCuentaDolares;
         this.listaCuentaColones = listaCuentaColones;
+        this.listaTarjertaCredito = listaTarjertaCredito;
+        this.colones = colones;
+        this.dolares = dolares;
     }
-    
-     public void agregarCuentaDolar(CuentaDolares dolares){
-        listaCuentaDolares.add(dolares);
-    }
-     
-     public void agregarCuentaColon(CuentaColones colones){
-        listaCuentaColones.add(colones);
-    }
-     
-    public void eliminarCuentaDolar(CuentaColones dolar){     
-        if(dolares.getSaldo()==0){
-        listaCuentaColones.remove(dolar);
-        }
-      }
-    
-     public void eliminarCuentaColon(CuentaColones colones){
-         if(colones.getSaldo()==0){
-        listaCuentaColones.remove(colones);
-         }
-      }
-     
 }
-
-
