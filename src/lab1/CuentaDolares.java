@@ -1,25 +1,23 @@
 
 package lab1;
 
+import java.util.Objects;
+
 /**
  *
  * @author ADMIN
  */
 public class CuentaDolares {
     private Integer numeroCuenta;
-    private double saldoCliente;
+    private float saldo;
     private static double tipoCambio;
 
     public Integer getNumeroCuenta() {
         return numeroCuenta;
     }
-    
-    public double getSaldoCliente() {
-        return saldoCliente;
-    }
 
-    public void setSaldoCliente(double saldoCliente) {
-        this.saldoCliente = saldoCliente;
+    public float getSaldo() {
+        return saldo;
     }
 
     public double getTipoCambio() {
@@ -30,13 +28,19 @@ public class CuentaDolares {
         this.tipoCambio = tipoCambio;
     }
 
-    public CuentaDolares(Integer numeroCuenta, double saldoCliente) {
+    public CuentaDolares(Integer numeroCuenta, float saldo) {
         this.numeroCuenta = numeroCuenta;
-        this.saldoCliente = saldoCliente;
+        this.saldo = saldo;
     }
 
-
+ public boolean identificarCuenta(Object cuenta){
+        if(this==cuenta) return true;
+        if(cuenta==null || getClass() != cuenta.getClass()) return false;
+        CuentaDolares numeroC = (CuentaDolares) cuenta;
+        return Float.compare(numeroC.saldo, saldo)== 0 &&
+                Objects.equals(numeroCuenta,numeroC.numeroCuenta);
     
     
     
+}
 }
