@@ -14,8 +14,11 @@ public class Retiro extends Transacciones {
         super(Id, cuenta, monto, saldoanterior, saldofinal);
     }
 
-    public void Transaccion() {
-       
+    public void Transaccion(String cuenta, double monto) {
+        this.cuenta = cuenta;
+        this.saldoanterior = this.getSaldo();
+        this.saldo = +monto;
+        this.saldofinal = this.getSaldo();
     }
 
 }
