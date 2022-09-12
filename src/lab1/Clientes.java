@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public class Clientes {
     private String nombre;
-    private String apellido;
     private String cedula;
     private Integer fechaNacimiento;
     private String correo;
@@ -15,13 +14,13 @@ public class Clientes {
     private int edad;
     private ArrayList<CuentaDolares> listaCuentaDolares;
     private ArrayList<CuentaColones> listaCuentaColones;
+    private ArrayList<TarjetaCredito> listaTarjertaCredito;
    
+    CuentaColones colones;
+    CuentaDolares dolares;
+    
     public String getNombre() {
         return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
     }
 
     public String getCedula() {
@@ -52,13 +51,12 @@ public class Clientes {
         return listaCuentaColones;
     }
 
-    public Clientes(String nombre, String apellido, String cedula, Integer fechaNacimiento,
+    public Clientes(String nombre, String cedula, Integer fechaNacimiento,
             String correo, Integer telefono, int edad,
             ArrayList<CuentaDolares> listaCuentaDolares,
             ArrayList<CuentaColones> listaCuentaColones) {
         
         this.nombre = nombre;
-        this.apellido = apellido;
         this.cedula = cedula;
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
@@ -76,12 +74,16 @@ public class Clientes {
         listaCuentaColones.add(colones);
     }
      
-    public void eliminarCuentaDolar(CuentaColones dolar){
+    public void eliminarCuentaDolar(CuentaColones dolar){     
+        if(dolares.getSaldo()==0){
         listaCuentaColones.remove(dolar);
+        }
       }
     
      public void eliminarCuentaColon(CuentaColones colones){
+         if(colones.getSaldo()==0){
         listaCuentaColones.remove(colones);
+         }
       }
      
 }
