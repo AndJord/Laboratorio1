@@ -10,12 +10,26 @@ package lab1;
  */
 public class Transferencia extends Transacciones {
 
-    public Transferencia(int Id, String cuentaorigen, String cuentadestino, double monto, double saldoanterior, double saldofinal, double saldoanteriordestino, double saldofinaldestino) {
-        super(Id, cuentaorigen, cuentadestino, monto, saldoanterior, saldofinal, saldoanteriordestino, saldofinaldestino);
+    protected String cuentadestino;
+    protected double saldoanteriordestino;
+    protected double saldofinaldestino;
+
+    public Transferencia(int Id, String cuentaorigen, double monto, double saldoanterior, double saldofinal) {
+        super(Id, cuentaorigen, monto, saldoanterior, saldofinal);
+        this.cuentadestino = cuentadestino;
+        this.saldoanteriordestino = saldoanteriordestino;
+        this.saldofinaldestino = saldofinaldestino;
     }
 
-    public void Transaccion() {
-
+    public void Transaccion(String cuenta, String cuentadestino, double monto) {
+        this.cuenta = cuenta;
+        this.saldoanterior = this.getSaldo();
+        this.saldo=-monto;
+        this.saldofinal = this.getSaldo();
+        this.cuentadestino = cuenta;
+        this.saldoanteriordestino= this.getSaldo();
+        this.saldo=+monto;
+        this.saldofinaldestino = this.getSaldo();
     }
 
 }
