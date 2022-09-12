@@ -4,7 +4,8 @@
  */
 package lab1;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
@@ -15,12 +16,12 @@ public abstract class Transacciones {
     protected int Id;
     protected String fecha;
     protected String cuenta;
-    protected String cuentadestino;
+    //protected String cuentadestino;
     protected double monto;
     protected double saldoanterior;
     protected double saldofinal;
-    protected double saldoanteriordestino;
-    protected double saldofinaldestino;
+    //protected double saldoanteriordestino;
+    //protected double saldofinaldestino;
 
     public int getId() {
         return Id;
@@ -33,10 +34,10 @@ public abstract class Transacciones {
     public String getCuenta() {
         return cuenta;
     }
-
-    public String getCuentadestino() {
-        return cuentadestino;
-    }
+//
+//    public String getCuentadestino() {
+//        return cuentadestino;
+//    }
 
     public double getMonto() {
         return monto;
@@ -54,36 +55,36 @@ public abstract class Transacciones {
         return saldofinal;
     }
 
-    public double getSaldoanteriordestino() {
-        return saldoanteriordestino;
-    }
+//    public double getSaldoanteriordestino() {
+//        return saldoanteriordestino;
+//    }
+//
+//    public double getSaldofinaldestino() {
+//        return saldofinaldestino;
+//    }
 
-    public double getSaldofinaldestino() {
-        return saldofinaldestino;
-    }
-
-    public abstract void Transaccion();
+    public abstract void Transaccion(String cuenta, double monto);
 
   
     public Transacciones(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
 
         this.Id = Id;
-        this.fecha = format(LocalDateTime.now());
+        this.fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         this.cuenta = cuenta;
         this.monto = monto;
         this.saldoanterior = saldoanterior;
         this.saldofinal = saldofinal;
     }
 
-    public Transacciones(int Id, String cuentaorigen, String cuentadestino, double monto, double saldoanterior, double saldofinal, double saldoanteriordestino, double saldofinaldestino) {
-        this.Id = Id;
-        this.cuenta = cuentaorigen;
-        this.cuentadestino = cuentadestino;
-        this.monto = monto;
-        this.saldoanterior = saldoanterior;
-        this.saldofinal = saldofinal;
-        this.saldoanteriordestino = saldoanteriordestino;
-        this.saldofinaldestino = saldofinaldestino;
-    }
+//    public Transacciones(int Id, String cuentaorigen, String cuentadestino, double monto, double saldoanterior, double saldofinal, double saldoanteriordestino, double saldofinaldestino) {
+//        this.Id = Id;
+//        this.cuenta = cuentaorigen;
+//        this.cuentadestino = cuentadestino;
+//        this.monto = monto;
+//        this.saldoanterior = saldoanterior;
+//        this.saldofinal = saldofinal;
+//        this.saldoanteriordestino = saldoanteriordestino;
+//        this.saldofinaldestino = saldofinaldestino;
+//    }
 
 }
