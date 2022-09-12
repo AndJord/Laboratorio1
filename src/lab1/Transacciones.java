@@ -4,6 +4,8 @@
  */
 package lab1;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author andre
@@ -11,6 +13,7 @@ package lab1;
 public abstract class Transacciones {
 
     protected int Id;
+    protected String fecha;
     protected String cuenta;
     protected String cuentadestino;
     protected double monto;
@@ -21,6 +24,10 @@ public abstract class Transacciones {
 
     public int getId() {
         return Id;
+    }
+
+    public String getFecha() {
+        return fecha;
     }
 
     public String getCuenta() {
@@ -57,8 +64,11 @@ public abstract class Transacciones {
 
     public abstract void Transaccion();
 
+  
     public Transacciones(int Id, String cuenta, double monto, double saldoanterior, double saldofinal) {
+
         this.Id = Id;
+        this.fecha = format(LocalDateTime.now());
         this.cuenta = cuenta;
         this.monto = monto;
         this.saldoanterior = saldoanterior;
