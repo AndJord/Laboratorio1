@@ -17,7 +17,7 @@ public class Retiro extends Transacciones {
     public void Transaccion(String cuenta, double monto) {
         this.cuenta = cuenta;
         this.saldoanterior = this.getSaldo();
-        this.saldo = +monto;
+        this.saldo=-monto;
         this.saldofinal = this.getSaldo();
     }
 
