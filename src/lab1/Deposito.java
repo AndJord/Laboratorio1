@@ -14,8 +14,11 @@ public class Deposito extends Transacciones {
         super(Id, cuenta, monto, saldoanterior, saldofinal);
     }
 
-    public void Transaccion() {
-
+    public void Transaccion(String cuenta, double monto) {
+        this.cuentadestino = cuenta;
+        this.saldoanterior = this.getSaldo();
+        this.saldo=+monto;
+        this.saldofinal = this.getSaldo();
     }
 
 }
