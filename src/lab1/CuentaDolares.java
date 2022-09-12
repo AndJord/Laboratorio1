@@ -38,9 +38,6 @@ public class CuentaDolares {
         if(cuenta==null || getClass() != cuenta.getClass()) return false;
         CuentaDolares numeroC = (CuentaDolares) cuenta;
         return Float.compare(numeroC.saldo, saldo)== 0 &&
-                Objects.equals(numeroCuenta,numeroC.numeroCuenta);
-    
-    
-    
+                Objects.equals(numeroCuenta,numeroC.numeroCuenta);   
 }
 }
