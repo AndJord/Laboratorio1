@@ -7,11 +7,14 @@ import java.util.ArrayList;
  * @author Joyce
  */
 public class Banco {
+
     TarjetaDebito debito;
     TarjetaCredito credito;
-    
+    Transferencia transferir;
+    Deposito depositar;
+    Retiro retirar;
     //Atributos
-    private String ListaCliente;
+
     private String nombre;
     private String correo;
     private Integer telefono;
@@ -19,15 +22,8 @@ public class Banco {
     private ArrayList<Clientes> ListaClientes;
     private ArrayList<CuentaDolares> ListaCuentaDolares;
     private ArrayList<CuentaColones> ListaCuentaColones;
-
+    private ArrayList<Transacciones> ListaTransacciones;
     //Metodos
-    public String getListaCliente() {
-        return ListaCliente;
-    }
-
-    public void setListaCliente(String ListaCliente) {
-        this.ListaCliente = ListaCliente;
-    }
 
     public String getNombre() {
         return nombre;
@@ -91,22 +87,34 @@ public class Banco {
 
     public void agregarTarjetaCredito(Clientes cliente) {
         cliente.listaTarjetaCredito.add(credito);
-        
+
     }
 
     public void eliminarTarjetaCredito(Clientes cliente) {
         cliente.listaTarjetaCredito.remove(credito);
-        
+
     }
-    
-    public void asignarTarjetaDebito(Clientes cliente){
-         debito = new TarjetaDebito();
-         cliente.listaTarjetaDebito.add(debito);
+
+    public void asignarTarjetaDebito(Clientes cliente) {
+        debito = new TarjetaDebito();
+        cliente.listaTarjetaDebito.add(debito);
+    }
+
+    public void agregarTransferencia(Transferencia trasferir) {
+        ListaTransacciones.add(transferir);
+    }
+
+    public void agregarDeposito(Deposito depositar) {
+        ListaTransacciones.add(depositar);
+    }
+
+    public void agregarRetiro(Retiro retirar) {
+        ListaTransacciones.add(retirar);
     }
 
     //Constructor
-    public Banco(String ListaCliente, String nombre, String correo, Integer telefono, int edad, ArrayList<Clientes> ListaClientes) {
-        this.ListaCliente = ListaCliente;
+    public Banco(String nombre, String correo, Integer telefono, int edad, ArrayList<Clientes> ListaClientes) {
+        this.ListaClientes = ListaClientes;
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
