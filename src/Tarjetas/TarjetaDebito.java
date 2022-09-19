@@ -6,29 +6,10 @@ package Tarjetas;
  *
  * @author Joyce
  */
-public class TarjetaDebito {
-    //Atributos
-    protected Integer numeroTarjeta;
-    protected double cuenta;
+public class TarjetaDebito extends Tarjeta {
     
-    
-    //Metodos
-    
-    public Integer getNumeroTarjeta() {
-        return numeroTarjeta;
+    //Constructor
+    public TarjetaDebito(int numeroTarjeta, String cuenta) {
+        super(numeroTarjeta, cuenta);
     }
-
-    public void setNumeroTarjeta(Integer numeroTarjeta) {
-        this.numeroTarjeta = numeroTarjeta;
-    }
-
-    public double getCuenta() {
-        return cuenta;
-    }
-
-    public void setCuenta(Double cuenta) {
-        this.cuenta = cuenta;
-    }
-    
-    
 }
